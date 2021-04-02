@@ -4,45 +4,43 @@
 //
 //typedef long long ll;
 //
-//ll n, m;
-//
-//vector<ll> seq;
+//ll ans;
+//vector<int> seq;
+//int n, k;
 //
 //bool check(ll mid) {
-//	ll sum = 0;
+//	int sum = 0;
+//
 //	for (auto element : seq) {
-//		if (element > mid)
-//			sum += element - mid;
+//		sum += element / mid;
 //	}
 //
-//	if (sum >= m)
+//	if (sum >= n)
 //		return true;
 //
 //	return false;
 //}
 //
 //int main() {
-//	scanf_s("%lld", &n);
-//	scanf_s("%lld", &m);
-//	seq.resize(n);
-//	
-//	ll l = 0;
-//	ll r = 0;
+//	scanf_s("%d", &k);
+//	scanf_s("%d", &n);
+//	seq.resize(k);
 //
-//	for (int i = 0; i < n; i++) {
-//		scanf_s("%lld", &seq[i]);
-//		r = max(seq[i], r);
-//	}
+//	for (int i = 0; i < k; i++)
+//		scanf_s("%d", &seq[i]);
 //
-//	ll ans = 0;
+//	ll l = 1;
+//	ll r = 3e9;
 //
 //	while (l <= r) {
 //		ll mid = (l + r) / 2;
+//
 //		if (check(mid)) {
-//			ans = mid;
 //			l = mid + 1;
+//			ans = mid;
 //		}
-//		else
+//
+//		else 
 //			r = mid - 1;
 //	}
 //
