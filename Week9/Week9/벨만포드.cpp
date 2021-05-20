@@ -42,6 +42,10 @@
 //
 //	int i = 0;
 //	for (auto element : answer) {
+//        if (i == 0) {
+//            i++;
+//            continue;
+//        }
 //		cout << i++ << ": ";
 //		cout << element << endl;
 //	}
