@@ -7,10 +7,10 @@ int n, k;
 int matrix[401][401];
 
 int main() {
-	cin >> n >> k;
+	scanf("%d %d", &n, &k);
 	int f, s;
 	for (int i = 0; i < k; i++) { 
-		cin >> f >> s;
+		scanf("%d %d", &f, &s);
 		matrix[f][s] = -1;
 		matrix[s][f] = 1;
 	}
@@ -33,10 +33,10 @@ int main() {
 	}
 
 	int cnt;
-	cin >> cnt;
+	scanf("%d", &cnt);
 	for (int i = 0; i < cnt; i++) {
-		cin >> f >> s;
-		cout << matrix[f][s] << endl;
+		scanf("%d %d", &f, &s);
+		printf("%d\n", matrix[f][s]);
 	}
 	
 
