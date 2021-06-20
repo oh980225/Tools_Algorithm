@@ -28,11 +28,9 @@ string solution(vector<int> numbers) {
 
 int main() {
     vector<int> numbers;
-    numbers.push_back(0);
-    numbers.push_back(0);
-    numbers.push_back(0);
-    numbers.push_back(0);
-    numbers.push_back(0);
+    numbers.push_back(6);
+    numbers.push_back(2);
+    numbers.push_back(10);
 
     string answer = solution(numbers);
     cout << answer << endl;
