@@ -32,6 +32,7 @@ int main() {
   cout.tie(NULL);
   vector<int> balls;
 
+
   cin >> n;
   int num;
   for (int i = 0; i < n; i++) {
