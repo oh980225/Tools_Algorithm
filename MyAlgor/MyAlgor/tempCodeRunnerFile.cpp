@@ -1,1 +1,1 @@
-memcpy
+curTime
