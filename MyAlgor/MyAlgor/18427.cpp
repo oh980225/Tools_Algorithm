@@ -49,6 +49,6 @@ int main() {
   buildBlocks();
 
   output();
-
+  
   return 0;
-}
+} 
