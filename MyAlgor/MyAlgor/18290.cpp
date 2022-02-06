@@ -5,7 +5,7 @@ using namespace std;
 int N, M, K;
 int matrix[11][11];
 bool chk[11][11];
-int ans;
+int ans = INT_MIN;
 
 int dX[] = {0, 0, -1, 1};
 int dY[] = {1, -1, 0, 0};
@@ -61,7 +61,7 @@ int main() {
   chk[0][0] = true;
   dfs(0, 0, 1, matrix[0][0]);
 
-  memset(chk, 0, sizeof(chk));
+  chk[0][0] = false;
   dfs(0, 0, 0, 0);
 
   cout << ans;
