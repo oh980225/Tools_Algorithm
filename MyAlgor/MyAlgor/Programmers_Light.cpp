@@ -9,6 +9,8 @@ vector<string> matrix;
 bool chk[501][501][4];
 int N, M;
 
+// 각 S L R 인 경우 방향 회전
+// 애초에 시계 방향으로 dY, dX를 설정
 int changeDir(int y, int x, int cur) {
     if(matrix[y][x] == 'S') {
         return cur;
