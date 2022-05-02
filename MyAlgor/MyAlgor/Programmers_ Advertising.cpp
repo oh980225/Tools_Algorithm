@@ -2,9 +2,12 @@
 
 using namespace std;
 
-const int MAX_TIME = 60 * 60 * 99 + 60 * 59 + 59;
+const int HOUR_TO_SEC = 60 * 60;
+const int MIN_TO_SEC = 60;
 
-int accumulateArr[MAX_TIME + 2];
+const int MAX_TIME_SEC = HOUR_TO_SEC * 99 + MIN_TO_SEC * 59 + 59;
+
+int accumulateArr[MAX_TIME_SEC + 2];
 
 vector<string> split(string str, char separator) {
   stringstream ss(str);
@@ -21,7 +24,7 @@ vector<string> split(string str, char separator) {
 int getTimeValue(string time) {
   vector<string> separatedTime = split(time, ':');
  
-  return 60 * 60 * stoi(separatedTime[0]) + 60 * stoi(separatedTime[1]) + stoi(separatedTime[2]);
+  return HOUR_TO_SEC * stoi(separatedTime[0]) + MIN_TO_SEC * stoi(separatedTime[1]) + stoi(separatedTime[2]);
 }
 
 void recordLogs(vector<string>& logs) {
