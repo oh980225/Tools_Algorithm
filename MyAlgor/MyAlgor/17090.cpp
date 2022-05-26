@@ -12,8 +12,6 @@ int N, M;
 void dfs(int y, int x, int cnt, int num) {
   if(y < 1 || y > N || x < 1 || x > M) {
     possible[num] = true;
-    cout << "num: " << num << endl;
-    cout << "cnt: " << cnt << endl;
     ans += cnt;
     return;
   }
@@ -27,6 +25,7 @@ void dfs(int y, int x, int cnt, int num) {
         break;
       }
       if(possible[chk[y + 1][x]]) {
+        possible[chk[y][x]] = true;
         ans += (cnt + 1);
         return;
       }
@@ -38,8 +37,8 @@ void dfs(int y, int x, int cnt, int num) {
         break;
       }
       if(possible[chk[y - 1][x]]) {
+        possible[chk[y][x]] = true;
         ans += (cnt + 1);
-        cout << "U ans: " << ans << endl;
         return;
       }
       break;
@@ -50,6 +49,7 @@ void dfs(int y, int x, int cnt, int num) {
         break;
       }
       if(possible[chk[y][x + 1]]) {
+        possible[chk[y][x]] = true;
         ans += (cnt + 1);
         return;
       }
@@ -61,8 +61,8 @@ void dfs(int y, int x, int cnt, int num) {
         break;
       }
       if(possible[chk[y][x - 1]]) {
+        possible[chk[y][x]] = true;
         ans += (cnt + 1);
-        cout << "L ans: " << ans << endl;
         return;
       }
       break;
@@ -84,19 +84,10 @@ int main() {
     }
   }
 
-  for(int i = 1; i <= N; i++) {
-    for(int j = 1; j <= M; j++) {
-      cout << matrix[i][j] << " ";
-    }
-    cout << endl;
-  }
-
   int idx = 1;
   for(int i = 1; i <= N; i++) {
     for(int j = 1; j <= M; j++) {
       if(!chk[i][j]) {
-        cout << "y: " << i << endl;
-        cout << "x: " << j << endl;
         dfs(i, j, 0, idx++);
       }
     }
